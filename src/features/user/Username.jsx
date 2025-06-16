@@ -1,3 +1,9 @@
+import { useSelector } from 'react-redux';
+
 export default function Username() {
-  return <div className="hidden text-sm font-semibold md:block">Gospel</div>;
+  const username = useSelector((store) => store.user.username);
+  if (!username || username === 'Please provide a valid username') return null;
+  return (
+    <div className="hidden text-sm font-semibold md:block">{username}</div>
+  );
 }
