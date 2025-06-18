@@ -28,7 +28,8 @@ const cartSlice = createSlice({
       state.cart = state.cart.filter((item) => item.pizzaId !== action.payload);
     },
     increaseItemQuantity(state, action) {
-      const item = state.cart.find((item) => pizzaId === action.payload);
+      const item = state.cart.find((item) => item.pizzaId === action.payload);
+
       state.cart = state.cart.map((item) =>
         item.pizzaId === action.payload
           ? {
@@ -49,6 +50,9 @@ const cartSlice = createSlice({
             }
           : item,
       );
+      const item = state.cart.find((item) => item.pizzaId === action.payload);
+
+      if (item.quantity === 0) cartSlice.caseReducers.deleteItem(state, action);
     },
     clearCart(state) {
       state.cart = [];
