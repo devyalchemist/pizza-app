@@ -23,9 +23,9 @@ const router = createBrowserRouter([
       {
         path: '/menu',
         element: (
-          // <ProtectedRoute>
-          <Menu />
-          // </ProtectedRoute>
+          <ProtectedRoute>
+            <Menu />
+          </ProtectedRoute>
         ),
         loader: menuLoader,
         errorElement: <Error />,
@@ -33,26 +33,26 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: (
-          // <ProtectedRoute>
-          <Cart />
-          // </ProtectedRoute>
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
         ),
       },
       {
         path: '/order/new',
         element: (
-          // <ProtectedRoute>
-          <CreateOrder />
-          // </ProtectedRoute>
+          <ProtectedRoute>
+            <CreateOrder />
+          </ProtectedRoute>
         ),
         action: orderAction,
       },
       {
         path: '/order/:id',
         element: (
-          // <ProtectedRoute>
-          <Order />
-          // </ProtectedRoute>
+          <ProtectedRoute>
+            <Order />
+          </ProtectedRoute>
         ),
         action: updateAction,
         loader: orderLoader,

@@ -7,7 +7,7 @@ export default {
     },
     extend: {
       colors: {
-        pizza: '#123456',
+        pizza: '#6D4C41',
       },
       fontSize: {
         big: ['80rem', { lineHeight: '1' }],

@@ -10,6 +10,7 @@ function getPosition() {
       },
       (err) => {
         console.error('Geolocation error:', err);
+        console.log(err);
         reject(err);
       },
     );
@@ -100,8 +101,9 @@ const userSlice = createSlice({
       if (action.payload === '') return null;
       if (action.payload === 'Please provide a valid username') {
         state.username = '';
+      } else {  
+        state.username = action.payload;
       }
-      state.username = action.payload;
     },
     reset(state) {
       state.status = 'idle';
