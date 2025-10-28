@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "redirects": [
+    {
+      "source": "/:path((?!api/|static/|_next/|favicon.ico|.*\\..*).*)",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
+}
